@@ -1,0 +1,46 @@
+
+Youtube Demo/Showcase:
+https://www.youtube.com/watch?v=06kkqu1SUmk
+
+
+Data Base set-up: 
+
+Create a data base using postgre, I used pgAdmin.
+Use the query tool to create the table and populate it with the default students. 
+This step uses the create.sql file found in the github repository.
+After the query completes successfully, the data base is ready to use with. 
+
+
+Interface Set-up
+
+Download the interface.py file
+Make sure that the directory of installation has the required extensions installed, “psycopg2”, which can be installed using pip. 
+Before you run the python file, you must first edit the connect function, with the credentials pertaining to your database. 
+If the set up is correct the ui should be populated with the entries already in your database, if not, it will be empty and an error message should have been output.
+
+
+
+
+
+Code Explanation
+
+Functions 
+ create_ui: creates the ui, uses the python extension tkinter. 
+
+ connect: connects to the database using the login/database parameters. 
+
+ get_all_students: retrieves all student entries from the student table in the D.B.
+
+ add_student: Adds a student entry to the student table, based on the user input fields. 
+
+ update_student_email: Updates a students email based on the new email entered by the user, as well as the entered student id. 
+
+ delete_student: Deletes the given student entry from the D.B., based on the id entered by the user. 
+
+
+Notes: 
+The u.i. Constantly displays the student table date, I did this for efficiency, i did not want to keep re-querying the data to see the updates. 
+
+In addition, after a core function is used, “update”, “add”, “delete”, the  get_all_students_ is function called, 
+meaning that the list will automatically update every time the user alters the data using the u.i.. 
+What this means is that the refresh button, which calls the get_all_students is mostly useless, as you will never see a change, unless the data is altered without the use of the u.i.
