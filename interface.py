@@ -117,7 +117,7 @@ class StudentApp:
 
     def add_student(self):
         if not self.connection:
-            messagebox.showerror("Error", "Database connection not established.")
+            messagebox.showerror("Database connection not established.")
             return
 
         # Get values from entry fields
@@ -127,7 +127,7 @@ class StudentApp:
         enrollment_date = self.enrollment_date_entry.get()
 
         if not (first_name and last_name and email and enrollment_date):
-            messagebox.showwarning("Warning", "All fields must be filled.")
+            messagebox.showwarning("All fields must be filled.")
             return
 
         try:
